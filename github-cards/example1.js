@@ -73,3 +73,22 @@ return (
 );
 }
 
+// todo: Handle errors
+// todo: Validation
+
+// Ref example to read the form element
+const Form = () => {
+  const userNameInput = React.createRef();
+  
+  const handleSubmit = event=>{
+    event.preventDefault();
+    console.log(userNameInput.current.value)
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Github username" ref={userNameInput}/>
+      <button>Search</button>
+    </form>
+  )
+}
